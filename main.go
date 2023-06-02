@@ -1,11 +1,13 @@
 package main
 
 import (
+	"discordBot/bot"
 	"discordBot/config"
 	"fmt"
 )
 
 func main() {
+
 	err := config.ReadConfig()
 
 	if err != nil {

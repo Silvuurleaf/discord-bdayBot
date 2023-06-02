@@ -30,7 +30,7 @@ func ReadConfig() error {
 
 	fmt.Println(string(file))
 
-	err = json.Unmarshal(file, config)
+	err = json.Unmarshal(file, &config)
 
 	if err != nil {
 		fmt.Println(err.Error())
@@ -39,6 +39,9 @@ func ReadConfig() error {
 
 	Token = config.Token
 	BotPrefix = config.BotPrefix
+
+	//godotenv.Load()
+	//Token = os.Getenv("BOT_TOKEN")
 
 	return nil
 }
